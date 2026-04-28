@@ -15,7 +15,7 @@ with st.sidebar:
     st.title("📂 Menú Principal")
     materia = st.radio(
         "Selecciona una materia:",
-        ["🏠 Inicio", "📐 Matemáticas", "🐍 Python", "🧪 Química", "📜 Legislación Militar"]
+        ["🏠 Inicio", "Manual 1", "Manual 2", "Manual 3 ", "Legislación Militar"]
 
     )
     st.divider()
@@ -23,7 +23,7 @@ with st.sidebar:
 
 # --- PÁGINA DE INICIO ---
 if materia == "🏠 Inicio":
-    st.title("🚀 ¡Bienvenido a tu Plan de Estudio, Daniel!")
+    st.title("🚀 ¡Bienvenido a tu Plan de Estudio, Capi Daniel✈️!")
     st.write("Selecciona una materia en el menú de la izquierda para comenzar a practicar.")
     
     # Métricas principales
@@ -33,6 +33,6 @@ if materia == "🏠 Inicio":
     col3.metric("Tu progreso actual", "25%")
     
     st.image("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000", caption="¡Mantén el enfoque!")
-elif materia == "📜 Legislación Militar":
-    st.switch_page("pages/2_Legislacion_Militar.py")
+elif materia == "Legislación Militar":
+    st.switch_page("pages/2_Legislacion.py")
 
