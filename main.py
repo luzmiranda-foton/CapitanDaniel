@@ -34,5 +34,5 @@ if materia == "🏠 Inicio":
     
     st.image("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000", caption="¡Mantén el enfoque!")
 elif materia == "Legislacion":
-    st.switch_page("Pages/Legislacion.py")
+    st.switch_page("pages/Legislacion.py")
 
