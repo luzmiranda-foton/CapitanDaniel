@@ -13,10 +13,7 @@ dias_faltan = (fecha_examen - hoy).days
 # --- MENÚ LATERAL ---
 with st.sidebar:
     st.title("📂 Menú Principal")
-    materia = st.radio(
-        "Selecciona una materia:",
-        ["🏠 Inicio", "Manual 1", "Manual 2", "Manual 3", "legislacion"]
-
+    
     )
     st.divider()
     st.info(f"⏳ **{dias_faltan} días** restantes para el gran examen.")
