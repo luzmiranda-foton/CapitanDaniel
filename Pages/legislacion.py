@@ -272,9 +272,4 @@ if enviar_final:
     enviado = st.form_submit_button("Finalizar y Calificar")
     if enviado:
     puntos = 0
-    if q1 == "Interés Público":
-        puntos += 1
-    # ... repite con las demás preguntas ...
     
-    st.success(f"¡Examen terminado! Tu puntuación es: {puntos}")
-
