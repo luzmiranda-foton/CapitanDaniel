@@ -15,7 +15,8 @@ with st.sidebar:
     st.title("📂 Menú Principal")
     materia = st.radio(
         "Selecciona una materia:",
-        ["🏠 Inicio", "📐 Matemáticas", "🐍 Python", "🧪 Química"]
+        ["🏠 Inicio", "📐 Matemáticas", "🐍 Python", "🧪 Química", "📜 Legislación Militar"]
+
     )
     st.divider()
     st.info(f"⏳ **{dias_faltan} días** restantes para el gran examen.")
