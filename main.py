@@ -15,7 +15,7 @@ with st.sidebar:
     st.title("📂 Menú Principal")
     materia = st.radio(
         "Selecciona una materia:",
-        ["🏠 Inicio", "Manual 1", "Manual 2", "Manual 3 ", "legislacion"]
+        ["🏠 Inicio", "Manual 1", "Manual 2", "Manual 3 ", "Legislacion"]
 
     )
     st.divider()
