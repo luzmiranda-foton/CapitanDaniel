@@ -270,6 +270,5 @@ if enviar_final:
         st.warning("Buen intento, pero dale otra leída a los artículos de 'Cancelación'.")
       # Botón para enviar el cuestionario
     enviado = st.form_submit_button("Finalizar y Calificar")
-    if enviado:
-    puntos = 0
+
     
