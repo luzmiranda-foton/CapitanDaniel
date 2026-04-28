@@ -22,6 +22,4 @@ col1.metric("Días para el examen", f"{dias_faltan}")
 col2.metric("Materias pendientes", "3")
 col3.metric("Tu progreso actual", "25%")
 
-st.image(
-    "IMG-20251017-WA0017.jpg"¡Mantén el enfoque amorcito, tu puedes!"
-)
+st.image("IMG-20251017-WA0017.jpg"¡Mantén el enfoque amorcito, tu puedes!")
