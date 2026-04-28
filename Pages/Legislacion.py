@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Legislación Militar - Quiz", page_icon="📜")
+st.set_page_config(page_title="Legislación - Quiz")
 
 st.title("🛡️ Compendio de Legislación Militar")
 st.subheader("Ley Federal de Armas de Fuego y Explosivos")
