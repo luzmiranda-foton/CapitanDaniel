@@ -214,7 +214,7 @@ if boton_enviar:
         "33. ¿Bajo qué condición migratoria puede un extranjero obtener licencia de portación? (Art. 27)",
         ["Visitante temporal", "Residente permanente", "Cualquier extranjero con pasaporte", "Solo diplomáticos"]
     )
-mmm     # --- NIVEL FINAL: CANCELACIÓN Y PROHIBICIONES ---
+   # --- NIVEL FINAL: CANCELACIÓN Y PROHIBICIONES ---
     st.divider()
     st.write("### Nivel 4: Reglas Finales")
 
@@ -268,3 +268,13 @@ if enviar_final:
         st.success("¡Capitán, estás listo para el examen de Legislación!")
     else:
         st.warning("Buen intento, pero dale otra leída a los artículos de 'Cancelación'.")
+      # Botón para enviar el cuestionario
+    enviado = st.form_submit_button("Finalizar y Calificar")
+    if enviado:
+    puntos = 0
+    if q1 == "Interés Público":
+        puntos += 1
+    # ... repite con las demás preguntas ...
+    
+    st.success(f"¡Examen terminado! Tu puntuación es: {puntos}")
+
