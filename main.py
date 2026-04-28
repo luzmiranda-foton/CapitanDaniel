@@ -15,7 +15,7 @@ with st.sidebar:
     st.title("📂 Menú Principal")
     materia = st.radio(
         "Selecciona una materia:",
-        ["🏠 Inicio", "Manual 1", "Manual 2", "Manual 3 ", "Legislacion"]
+        ["🏠 Inicio", "Manual 1", "Manual 2", "Manual 3 ", "legislacion"]
 
     )
     st.divider()
@@ -33,10 +33,10 @@ if materia == "🏠 Inicio":
     col3.metric("Tu progreso actual", "25%")
     
     st.image("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000", caption="¡Mantén el enfoque, tu puedes amorcito!")
-elif materia == "legislacion.py":
+elif materia == "legislacion":
     try:
-        st.switch_page("pages/legislacion.py")
-    except:
         st.switch_page("Pages/legislacion.py")
+    except:
+        st.switch_page("pages/legislacion.py")
 
 
