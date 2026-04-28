@@ -23,6 +23,5 @@ col2.metric("Materias pendientes", "3")
 col3.metric("Tu progreso actual", "25%")
 
 st.image(
-    "https://images.unsplash.com/photo-1434030216411-0b793f4b4173",
-    caption="¡Mantén el enfoque!"
+    "IMG-20251017-WA0017.jpg"¡Mantén el enfoque amorcito, tu puedes!"
 )
