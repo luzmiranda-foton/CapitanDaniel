@@ -6,7 +6,7 @@ st.set_page_config(page_title="Mi Dashboard de Estudio", page_icon="🎓", layou
 
 # --- LÓGICA DE DÍAS RESTANTES ---
 # Cambia esta fecha por la de tu examen real
-fecha_examen = date(2026, 10, 03) 
+fecha_examen = date(2026, 10, 3) 
 hoy = date.today()
 dias_faltan = (fecha_examen - hoy).days
 
