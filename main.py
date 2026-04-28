@@ -33,10 +33,8 @@ if materia == "🏠 Inicio":
     col3.metric("Tu progreso actual", "25%")
     
     st.image("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000", caption="¡Mantén el enfoque, tu puedes amorcito!")
-elif materia == "legislacion":
-    try:
-        st.switch_page("Pages/legislacion.py")
-    except:
-        st.switch_page("pages/legislacion.py")
+elif materia == "Legislacion":
+    st.switch_page("pages/legislacion.py")
+
 
 
