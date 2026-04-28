@@ -33,7 +33,7 @@ if materia == "🏠 Inicio":
     col3.metric("Tu progreso actual", "25%")
     
     st.image("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000", caption="¡Mantén el enfoque, tu puedes amorcito!")
-elif materia == "Legislacion":
+elif materia == "legislacion":
     st.switch_page("pages/legislacion.py")
 
 
