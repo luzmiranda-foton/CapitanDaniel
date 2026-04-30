@@ -30,12 +30,12 @@ def obtener_color_dominio(porcentaje):
 
 
 def show():
-    st.title("🏥 Ley del Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas")
+    st.title("Ley del Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas")
 
     usuario = st.session_state.get("usuario")
 
     if not usuario:
-        st.warning("⚠️ Primero escribe tu nombre en la página principal.")
+        st.warning("Primero escribe tu nombre en la página principal.")
         st.stop()
 
     seccion_id = "issfam_parte1"
@@ -45,7 +45,7 @@ def show():
 
     st.markdown("## ISSFAM - Primera parte")
     st.info(f"👤 Usuario: **{usuario}**")
-    st.info(f"🔥 Dificultad del tema: **{dificultad}**")
+    st.info(f" Dificultad del tema: **{dificultad}**")
 
     if usuario in progreso and seccion_id in progreso[usuario]:
         datos = progreso[usuario][seccion_id]
@@ -326,7 +326,7 @@ def show():
     st.markdown(f"### Tu dominio actual: {color}")
     st.write(mensaje)
 
-    if st.button("📊 Finalizar sección"):
+    if st.button("Finalizar sección"):
         aprobado = porcentaje >= 70
 
         if aprobado:
