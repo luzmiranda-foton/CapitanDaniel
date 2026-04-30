@@ -39,7 +39,7 @@ def show():
         st.stop()
 
     seccion_id = "disciplina_parte1"
-    dificultad = "🟠 Medio"
+    dificultad = "🟢 Facil"
 
     progreso = cargar_progreso()
 
