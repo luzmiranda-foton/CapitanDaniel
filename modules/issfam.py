@@ -38,7 +38,7 @@ def show():
         st.warning("Primero escribe tu nombre en la página principal.")
         st.stop()
 
-    seccion_id = "issfam_parte1"
+    seccion_id = "Ley del ISSFAM"
     dificultad = "🟠 Medio"
 
     progreso = cargar_progreso()
