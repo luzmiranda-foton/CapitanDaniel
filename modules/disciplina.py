@@ -38,7 +38,7 @@ def show():
         st.warning("⚠️ Primero escribe tu nombre en la página principal.")
         st.stop()
 
-    seccion_id = "disciplina_parte1"
+    seccion_id = "Disciplina del ejercito y fuerza aerea"
     dificultad = "🟢 Fácil"
 
     progreso = cargar_progreso()
