@@ -2,11 +2,12 @@ import streamlit as st
 
 # importar módulos (puedes crearlos poco a poco)
 from modules import disciplina
+from modules import issfam
 # from modules import armas
 # from modules import justicia
 # etc...
 
-st.title("⚖️ Legislación")
+st.title("Legislación")
 
 opcion = st.selectbox("Selecciona una ley:", [
     "Ley de Disciplina del Ejército y Fuerza Aérea Mexicanos",
@@ -32,7 +33,7 @@ elif opcion == "Reglamento General de Deberes Militares":
     st.warning("⚠️ Módulo en construcción")
 
 elif opcion == "Ley del Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas":
-    st.warning("⚠️ Módulo en construcción")
+   issfam.show()
 
 elif opcion == "Ley de Ascensos y Recompensas del Ejército y Fuerza Aérea Mexicanos":
     st.warning("⚠️ Módulo en construcción")
