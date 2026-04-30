@@ -1,8 +1,22 @@
 import streamlit as st
 from datetime import date
 import json
+import os
 import pandas as pd
+# para guardar el usuario
+RUTA_USUARIO = "data/usuario.json"
 
+def cargar_usuario():
+    try:
+        with open(RUTA_USUARIO, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
+        return {}
+
+def guardar_usuario(nombre):
+    os.makedirs("data", exist_ok=True)
+    with open(RUTA_USUARIO, "w", encoding="utf-8") as f:
+        json.dump({"usuario": nombre}, f) 
 st.set_page_config(
     page_title="Mi Dashboard de Estudio",
     page_icon="🎓",
