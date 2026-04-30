@@ -208,7 +208,7 @@ def show():
 
 ]
 
-    if "disciplina_respuestas" not in st.session_state:
+        if "disciplina_respuestas" not in st.session_state:
         st.session_state.disciplina_respuestas = {}
 
     correctas = 0
@@ -231,20 +231,23 @@ def show():
         )
 
         if not ya_confirmada:
-            if st.button("Confirmar respuesta", key=f"btn_{usuario}_{i}"):
+            if st.button("Confirmar respuesta", key=f"btn_{usuario}_{seccion_id}_{i}"):
                 if respuesta is None:
                     st.warning("Selecciona una respuesta primero.")
                 else:
+                    st.session_state.disciplina_respuestas[key_respuesta] = respuesta
                     st.session_state.disciplina_respuestas[key_confirmada] = True
                     st.rerun()
+
         else:
-            respuesta_guardada = st.session_state.get(key_respuesta)
+            respuesta_guardada = st.session_state.disciplina_respuestas.get(key_respuesta)
 
             if respuesta_guardada == p["correcta"]:
                 st.success("✅ Correcto")
                 correctas += 1
             else:
                 st.error("❌ Incorrecto")
+                st.write(f"Respuesta correcta: **{p['correcta']}**")
 
     total = len(preguntas)
     porcentaje = int((correctas / total) * 100)
@@ -259,11 +262,11 @@ def show():
     st.write(mensaje)
 
     if st.button("📊 Finalizar sección"):
-        if porcentaje >= 70:
-            aprobado = True
+        aprobado = porcentaje >= 70
+
+        if aprobado:
             st.success("✅ Sección aprobada. Puedes avanzar al siguiente nivel.")
         else:
-            aprobado = False
             st.warning("❌ No aprobaste. Te recomiendo repetir esta sección.")
 
         if usuario not in progreso:
@@ -287,7 +290,11 @@ def show():
             st.session_state.disciplina_respuestas.pop(
                 f"{usuario}_{seccion_id}_confirmada_{i}", None
             )
+            st.session_state.disciplina_respuestas.pop(
+                f"{usuario}_{seccion_id}_respuesta_{i}", None
+            )
             st.session_state.pop(
                 f"{usuario}_{seccion_id}_respuesta_{i}", None
             )
+
         st.rerun()
