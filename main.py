@@ -91,7 +91,7 @@ st.image(
 # DASHBOARD DE PROGRESO
 # ----------------------------
 st.markdown("---")
-st.subheader("📊 Dashboard de Progreso")
+st.subheader("Dashboard de Progreso")
 
 if usuario in progreso and len(progreso[usuario]) > 0:
 
@@ -111,10 +111,10 @@ if usuario in progreso and len(progreso[usuario]) > 0:
 
     st.dataframe(df, use_container_width=True)
 
-    st.subheader("📈 Avance por sección")
+    st.subheader("Avance por sección")
     st.bar_chart(df.set_index("Sección")["Porcentaje"])
 
-    st.subheader("🎯 Diagnóstico")
+    st.subheader("Diagnóstico")
 
     for _, fila in df.iterrows():
         st.write(
