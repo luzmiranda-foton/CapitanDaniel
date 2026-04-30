@@ -32,16 +32,23 @@ def obtener_color_dominio(porcentaje):
 def show():
     st.title("📘 Ley de Disciplina del Ejército y Fuerza Aérea Mexicanos")
 
+    usuario = st.session_state.get("usuario")
+
+    if not usuario:
+        st.warning("⚠️ Primero escribe tu nombre en la página principal.")
+        st.stop()
+
     seccion_id = "disciplina_parte1"
     dificultad = "🟠 Medio"
 
     progreso = cargar_progreso()
 
     st.markdown("## Primera parte")
+    st.info(f"👤 Usuario: **{usuario}**")
     st.info(f"🔥 Dificultad del tema: **{dificultad}**")
 
-    if seccion_id in progreso:
-        datos = progreso[seccion_id]
+    if usuario in progreso and seccion_id in progreso[usuario]:
+        datos = progreso[usuario][seccion_id]
         st.success(
             f"Progreso guardado: {datos['color']} — "
             f"{datos['porcentaje']}% — {datos['mensaje']}"
@@ -77,15 +84,14 @@ def show():
         },
     ]
 
-    # Inicializar respuestas confirmadas
     if "disciplina_respuestas" not in st.session_state:
         st.session_state.disciplina_respuestas = {}
 
     correctas = 0
 
     for i, p in enumerate(preguntas):
-        key_respuesta = f"{seccion_id}_respuesta_{i}"
-        key_confirmada = f"{seccion_id}_confirmada_{i}"
+        key_respuesta = f"{usuario}_{seccion_id}_respuesta_{i}"
+        key_confirmada = f"{usuario}_{seccion_id}_confirmada_{i}"
 
         st.markdown("---")
         st.markdown(f"### {i + 1}. {p['pregunta']}")
@@ -101,13 +107,12 @@ def show():
         )
 
         if not ya_confirmada:
-            if st.button("Confirmar respuesta", key=f"btn_{i}"):
+            if st.button("Confirmar respuesta", key=f"btn_{usuario}_{i}"):
                 if respuesta is None:
                     st.warning("Selecciona una respuesta primero.")
                 else:
                     st.session_state.disciplina_respuestas[key_confirmada] = True
                     st.rerun()
-
         else:
             respuesta_guardada = st.session_state.get(key_respuesta)
 
@@ -137,7 +142,10 @@ def show():
             aprobado = False
             st.warning("❌ No aprobaste. Te recomiendo repetir esta sección.")
 
-        progreso[seccion_id] = {
+        if usuario not in progreso:
+            progreso[usuario] = {}
+
+        progreso[usuario][seccion_id] = {
             "aprobado": aprobado,
             "puntaje": correctas,
             "total": total,
@@ -152,6 +160,10 @@ def show():
 
     if st.button("🔄 Reiniciar intento"):
         for i in range(total):
-            st.session_state.disciplina_respuestas.pop(f"{seccion_id}_confirmada_{i}", None)
-            st.session_state.pop(f"{seccion_id}_respuesta_{i}", None)
+            st.session_state.disciplina_respuestas.pop(
+                f"{usuario}_{seccion_id}_confirmada_{i}", None
+            )
+            st.session_state.pop(
+                f"{usuario}_{seccion_id}_respuesta_{i}", None
+            )
         st.rerun()
