@@ -3,8 +3,11 @@ from datetime import date
 import json
 import os
 import pandas as pd
-# para guardar el usuario
+
+
 RUTA_USUARIO = "data/usuario.json"
+RUTA_PROGRESO = "data/progreso.json"
+
 
 def cargar_usuario():
     try:
@@ -13,60 +16,65 @@ def cargar_usuario():
     except:
         return {}
 
+
 def guardar_usuario(nombre):
     os.makedirs("data", exist_ok=True)
     with open(RUTA_USUARIO, "w", encoding="utf-8") as f:
-        json.dump({"usuario": nombre}, f) 
+        json.dump({"usuario": nombre}, f, indent=4, ensure_ascii=False)
+
+
+def cargar_progreso():
+    try:
+        with open(RUTA_PROGRESO, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except:
+        return {}
+
+
 st.set_page_config(
     page_title="Mi Dashboard de Estudio",
     page_icon="🎓",
     layout="wide"
 )
 
-# ----------------------------
-# FUNCIONES
-# ----------------------------
-def cargar_progreso():
-    try:
-        with open("data/progreso.json", "r", encoding="utf-8") as f:
-            return json.load(f)
-    except:
-        return {}
 
-# ----------------------------
-# LÓGICA DE DÍAS
-# ----------------------------
+datos_usuario_guardado = cargar_usuario()
+
+if "usuario" not in st.session_state:
+    st.session_state["usuario"] = datos_usuario_guardado.get("usuario", "")
+
+
 fecha_examen = date(2026, 10, 3)
 hoy = date.today()
 dias_faltan = (fecha_examen - hoy).days
 
-# ----------------------------
-# SIDEBAR
-# ----------------------------
+
 with st.sidebar:
     st.title("📂 Menú Principal")
 
-    nombre = st.text_input("👤 Ingresa tu nombre")
+    nombre = st.text_input(
+        "👤 Ingresa tu nombre",
+        value=st.session_state["usuario"],
+        key="input_usuario"
+    )
 
-    if nombre:
-        st.session_state["usuario"] = nombre
+    if nombre.strip():
+        st.session_state["usuario"] = nombre.strip()
+        guardar_usuario(nombre.strip())
 
     st.info(f"⏳ **{dias_faltan} días** restantes para el gran examen.")
 
-# ----------------------------
-# USUARIO ACTUAL
-# ----------------------------
-usuario = st.session_state.get("usuario", "Invitado")
 
-# ----------------------------
-# CONTENIDO PRINCIPAL
-# ----------------------------
+usuario = st.session_state.get("usuario", "")
+
+if not usuario:
+    usuario = "Invitado"
+
+
 st.title(f"🚀 ¡Bienvenido a tu Plan de Estudio, {usuario}! ✈️")
 st.write("Usa el menú de la izquierda para cambiar de materia.")
 
-# ----------------------------
-# CARGAR PROGRESO
-# ----------------------------
+
 progreso = cargar_progreso()
 
 porcentaje_general = 0
@@ -83,27 +91,21 @@ if usuario in progreso and len(progreso[usuario]) > 0:
     porcentaje_general = int(total_porcentajes / len(datos_usuario))
     materias_pendientes = max(0, 3 - len(datos_usuario))
 
-# ----------------------------
-# MÉTRICAS
-# ----------------------------
+
 col1, col2, col3 = st.columns(3)
 
 col1.metric("Días para el examen", f"{dias_faltan}")
 col2.metric("Materias pendientes", materias_pendientes)
 col3.metric("Tu progreso actual", f"{porcentaje_general}%")
 
-# ----------------------------
-# IMAGEN
-# ----------------------------
+
 st.image(
     "IMG-20251017-WA0017.jpg",
     caption="¡Mantén el enfoque amorcito, tú puedes!",
     use_container_width=True
 )
 
-# ----------------------------
-# DASHBOARD DE PROGRESO
-# ----------------------------
+
 st.markdown("---")
 st.subheader("Dashboard de Progreso")
 
