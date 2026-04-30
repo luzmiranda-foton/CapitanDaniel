@@ -57,7 +57,7 @@ def show():
     preguntas = [
         {
             "tipo": "multiple",
-            "pregunta": "1. Selecciona prestaciones que se otorgan con arreglo a la Ley del ISSFAM. (Art. 18)",
+            "pregunta": " Selecciona prestaciones que se otorgan con arreglo a la Ley del ISSFAM. (Art. 18)",
             "correctas": [
                 "Haber de retiro",
                 "Pensión",
@@ -96,7 +96,7 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "2. ¿Quiénes tramitarán la afiliación del personal ante el Instituto? (Art. 19)",
+            "pregunta": " ¿Quiénes tramitarán la afiliación del personal ante el Instituto? (Art. 19)",
             "correcta": "Las Secretarías de la Defensa Nacional y de Marina.",
             "opciones": [
                 "Las Secretarías de la Defensa Nacional y de Marina.",
@@ -116,7 +116,7 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "4. ¿Qué es el Haber de Retiro según el Art. 21?",
+            "pregunta": " ¿Qué es el Haber de Retiro según el Art. 21?",
             "correcta": "Haber de retiro es la prestación económica vitalicia a que tienen derecho los militares retirados en los casos y condiciones que fija esta Ley.",
             "opciones": [
                 "Haber de retiro es una ayuda temporal por enfermedad.",
@@ -126,7 +126,7 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "5. ¿Qué es la Pensión conforme al Art. 21?",
+            "pregunta": " ¿Qué es la Pensión conforme al Art. 21?",
             "correcta": "Pensión es la prestación económica vitalicia a que tienen derecho los familiares de los militares en los casos y condiciones que fije esta Ley.",
             "opciones": [
                 "Pensión es la prestación económica vitalicia a que tienen derecho los familiares de los militares en los casos y condiciones que fije esta Ley.",
@@ -136,7 +136,7 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "6. ¿Qué es la Compensación conforme al Art. 21?",
+            "pregunta": " ¿Qué es la Compensación conforme al Art. 21?",
             "correcta": "Compensación es la prestación económica a que tienen derecho los militares y sus familiares, en una sola exhibición, en los términos y condiciones que fije esta Ley.",
             "opciones": [
                 "Compensación es una prestación médica permanente.",
@@ -146,7 +146,7 @@ def show():
         },
         {
             "tipo": "multiple",
-            "pregunta": "7. Selecciona causas de retiro según el Art. 24 de la Ley del ISSFAM.",
+            "pregunta": " Selecciona causas de retiro según el Art. 24 de la Ley del ISSFAM.",
             "correctas": [
                 "Llegar a la edad límite que fija el artículo 25 de esta Ley",
                 "Quedar incapacitado en acción de armas o como consecuencia de las lesiones recibidas en ella",
@@ -169,13 +169,13 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "8. ¿Cuál es la edad límite de los individuos de tropa para permanecer en activo? (Art. 25)",
+            "pregunta": " ¿Cuál es la edad límite de los individuos de tropa para permanecer en activo? (Art. 25)",
             "correcta": "50 años.",
             "opciones": ["45 años.", "50 años.", "60 años."],
         },
         {
             "tipo": "radio",
-            "pregunta": "9. ¿Quedan exentos de impuestos los haberes de retiro, compensaciones y pensiones? (Art. 32)",
+            "pregunta": " ¿Quedan exentos de impuestos los haberes de retiro, compensaciones y pensiones? (Art. 32)",
             "correcta": "Los haberes de retiro, compensaciones y pensiones quedan exentos de todo impuesto.",
             "opciones": [
                 "Los haberes de retiro, compensaciones y pensiones quedan exentos de todo impuesto.",
@@ -185,7 +185,7 @@ def show():
         },
         {
             "tipo": "multiple",
-            "pregunta": "10. Selecciona quiénes tienen derecho al 100% del haber de la jerarquía reconocida para efectos de retiro. (Art. 33)",
+            "pregunta": " Selecciona quiénes tienen derecho al 100% del haber de la jerarquía reconocida para efectos de retiro. (Art. 33)",
             "correctas": [
                 "Los militares incapacitados en acción de armas o a consecuencia de lesiones recibidas en ella",
                 "Los militares incapacitados en otros actos del servicio o como consecuencia de ellos",
@@ -200,13 +200,13 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "11. ¿Qué porcentaje corresponde al militar con 20 años de servicios para efectos de retiro? (Art. 35)",
+            "pregunta": " ¿Qué porcentaje corresponde al militar con 20 años de servicios para efectos de retiro? (Art. 35)",
             "correcta": "60%",
             "opciones": ["50%", "60%", "75%"],
         },
         {
             "tipo": "radio",
-            "pregunta": "12. ¿Qué ocurre con el porcentaje del haber de retiro después de 20 años de servicios? (Art. 35)",
+            "pregunta": " ¿Qué ocurre con el porcentaje del haber de retiro después de 20 años de servicios? (Art. 35)",
             "correcta": "Aumenta progresivamente por cada año adicional de servicio.",
             "opciones": [
                 "Aumenta progresivamente por cada año adicional de servicio.",
@@ -216,13 +216,13 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "13. ¿Cuál es el porcentaje máximo que puede alcanzarse por años de servicio? (Art. 35)",
+            "pregunta": " ¿Cuál es el porcentaje máximo que puede alcanzarse por años de servicio? (Art. 35)",
             "correcta": "100%",
             "opciones": ["80%", "90%", "100%"],
         },
         {
             "tipo": "radio",
-            "pregunta": "14. ¿Quién cubre el pago de haberes de retiro, compensaciones y pensiones? (Art. 40)",
+            "pregunta": " ¿Quién cubre el pago de haberes de retiro, compensaciones y pensiones? (Art. 40)",
             "correcta": "El Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas.",
             "opciones": [
                 "El Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas.",
@@ -232,7 +232,7 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "15. ¿Qué naturaleza tienen las prestaciones otorgadas por esta Ley?",
+            "pregunta": " ¿Qué naturaleza tienen las prestaciones otorgadas por esta Ley?",
             "correcta": "Son prestaciones de seguridad social.",
             "opciones": [
                 "Son prestaciones de seguridad social.",
