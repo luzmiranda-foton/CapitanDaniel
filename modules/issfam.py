@@ -171,11 +171,7 @@ def show():
             "tipo": "radio",
             "pregunta": "8. ¿Cuál es la edad límite de los individuos de tropa para permanecer en activo? (Art. 25)",
             "correcta": "50 años.",
-            "opciones": [
-                "45 años.",
-                "50 años.",
-                "60 años.",
-            ],
+            "opciones": ["45 años.", "50 años.", "60 años."],
         },
         {
             "tipo": "radio",
@@ -206,11 +202,7 @@ def show():
             "tipo": "radio",
             "pregunta": "11. ¿Qué porcentaje corresponde al militar con 20 años de servicios para efectos de retiro? (Art. 35)",
             "correcta": "60%",
-            "opciones": [
-                "50%",
-                "60%",
-                "75%",
-            ],
+            "opciones": ["50%", "60%", "75%"],
         },
         {
             "tipo": "radio",
@@ -226,11 +218,7 @@ def show():
             "tipo": "radio",
             "pregunta": "13. ¿Cuál es el porcentaje máximo que puede alcanzarse por años de servicio? (Art. 35)",
             "correcta": "100%",
-            "opciones": [
-                "80%",
-                "90%",
-                "100%",
-            ],
+            "opciones": ["80%", "90%", "100%"],
         },
         {
             "tipo": "radio",
@@ -254,70 +242,104 @@ def show():
         },
     ]
 
-    respuestas_usuario = {}
+    if "issfam_respuestas" not in st.session_state:
+        st.session_state.issfam_respuestas = {}
 
-    with st.form("form_issfam"):
-        for i, p in enumerate(preguntas):
-            st.markdown(f"### {p['pregunta']}")
+    correctas = 0
 
-            if p["tipo"] == "radio":
-                respuestas_usuario[i] = st.radio(
-                    "Elige una respuesta:",
-                    p["opciones"],
-                    key=f"issfam_radio_{i}",
+    for i, p in enumerate(preguntas):
+        key_respuesta = f"{usuario}_{seccion_id}_respuesta_{i}"
+        key_confirmada = f"{usuario}_{seccion_id}_confirmada_{i}"
+
+        st.markdown("---")
+        st.markdown(f"### {i + 1}. {p['pregunta']}")
+
+        ya_confirmada = st.session_state.issfam_respuestas.get(key_confirmada, False)
+
+        if p["tipo"] == "radio":
+            respuesta = st.radio(
+                "Elige una opción:",
+                p["opciones"],
+                key=key_respuesta,
+                disabled=ya_confirmada,
+                index=None,
+            )
+
+        elif p["tipo"] == "multiple":
+            st.write("Selecciona una o varias respuestas:")
+
+            respuesta = []
+
+            for j, opcion in enumerate(p["opciones"]):
+                key_checkbox = f"{usuario}_{seccion_id}_pregunta_{i}_opcion_{j}"
+
+                marcada = st.checkbox(
+                    opcion,
+                    key=key_checkbox,
+                    disabled=ya_confirmada,
                 )
 
-            elif p["tipo"] == "multiple":
-                respuestas_usuario[i] = st.multiselect(
-                    "Selecciona una o varias respuestas:",
-                    p["opciones"],
-                    key=f"issfam_multi_{i}",
-                )
+                if marcada:
+                    respuesta.append(opcion)
 
-            st.divider()
-
-        enviar = st.form_submit_button("✅ Revisar respuestas")
-
-    if enviar:
-        aciertos = 0
-        total = len(preguntas)
-
-        st.markdown("## Resultados")
-
-        for i, p in enumerate(preguntas):
-            respuesta = respuestas_usuario[i]
-
-            if p["tipo"] == "radio":
-                if respuesta == p["correcta"]:
-                    aciertos += 1
-                    st.success(f"✅ Pregunta {i + 1}: Correcta")
+        if not ya_confirmada:
+            if st.button("Confirmar respuesta", key=f"btn_{usuario}_{seccion_id}_{i}"):
+                if p["tipo"] == "radio" and respuesta is None:
+                    st.warning("Selecciona una respuesta primero.")
+                elif p["tipo"] == "multiple" and len(respuesta) == 0:
+                    st.warning("Selecciona al menos una respuesta.")
                 else:
-                    st.error(f"❌ Pregunta {i + 1}: Incorrecta")
+                    st.session_state.issfam_respuestas[key_respuesta] = respuesta
+                    st.session_state.issfam_respuestas[key_confirmada] = True
+                    st.rerun()
+
+        else:
+            respuesta_guardada = st.session_state.issfam_respuestas.get(key_respuesta)
+
+            if p["tipo"] == "radio":
+                if respuesta_guardada == p["correcta"]:
+                    st.success("✅ Correcto")
+                    correctas += 1
+                else:
+                    st.error("❌ Incorrecto")
                     st.write(f"Respuesta correcta: **{p['correcta']}**")
 
             elif p["tipo"] == "multiple":
-                if set(respuesta) == set(p["correctas"]):
-                    aciertos += 1
-                    st.success(f"✅ Pregunta {i + 1}: Correcta")
+                if set(respuesta_guardada) == set(p["correctas"]):
+                    st.success("✅ Correcto")
+                    correctas += 1
                 else:
-                    st.error(f"❌ Pregunta {i + 1}: Incorrecta")
+                    st.error("❌ Incorrecto")
                     st.write("Respuestas correctas:")
                     for correcta in p["correctas"]:
                         st.write(f"- {correcta}")
 
-        porcentaje = round((aciertos / total) * 100)
-        color, mensaje = obtener_color_dominio(porcentaje)
+    total = len(preguntas)
+    porcentaje = int((correctas / total) * 100)
 
-        st.markdown("## 📊 Dominio del tema")
-        st.metric("Resultado", f"{porcentaje}%")
-        st.write(f"Nivel: **{color}**")
-        st.write(f"Comentario: **{mensaje}**")
+    st.markdown("---")
+    st.write(f"Resultado actual: **{correctas}/{total}**")
+    st.progress(porcentaje / 100)
+
+    color, mensaje = obtener_color_dominio(porcentaje)
+
+    st.markdown(f"### Tu dominio actual: {color}")
+    st.write(mensaje)
+
+    if st.button("📊 Finalizar sección"):
+        aprobado = porcentaje >= 70
+
+        if aprobado:
+            st.success("✅ Sección aprobada. Puedes avanzar al siguiente nivel.")
+        else:
+            st.warning("❌ No aprobaste. Te recomiendo repetir esta sección.")
 
         if usuario not in progreso:
             progreso[usuario] = {}
 
         progreso[usuario][seccion_id] = {
-            "aciertos": aciertos,
+            "aprobado": aprobado,
+            "puntaje": correctas,
             "total": total,
             "porcentaje": porcentaje,
             "color": color,
@@ -326,5 +348,26 @@ def show():
         }
 
         guardar_progreso(progreso)
+        st.success("Progreso guardado.")
 
-        st.success("✅ Progreso guardado correctamente.")
+    if st.button("🔄 Reiniciar intento"):
+        for i, p in enumerate(preguntas):
+            st.session_state.issfam_respuestas.pop(
+                f"{usuario}_{seccion_id}_confirmada_{i}", None
+            )
+            st.session_state.issfam_respuestas.pop(
+                f"{usuario}_{seccion_id}_respuesta_{i}", None
+            )
+
+            if p["tipo"] == "radio":
+                st.session_state.pop(
+                    f"{usuario}_{seccion_id}_respuesta_{i}", None
+                )
+
+            elif p["tipo"] == "multiple":
+                for j in range(len(p["opciones"])):
+                    st.session_state.pop(
+                        f"{usuario}_{seccion_id}_pregunta_{i}_opcion_{j}", None
+                    )
+
+        st.rerun()
