@@ -11,10 +11,19 @@ dias_faltan = (fecha_examen - hoy).days
 # --- SIDEBAR ---
 with st.sidebar:
     st.title("📂 Menú Principal")
+
+    # 👇 NUEVO
+    nombre = st.text_input("👤 Ingresa tu nombre")
+
+    if nombre:
+        st.session_state["usuario"] = nombre
+
     st.info(f"⏳ **{dias_faltan} días** restantes para el gran examen.")
 
 # --- CONTENIDO PRINCIPAL ---
-st.title("🚀 ¡Bienvenido a tu Plan de Estudio, Capi Daniel✈️!")
+usuario = st.session_state.get("usuario", "Invitado")
+
+st.title(f"🚀 ¡Bienvenido a tu Plan de Estudio, {usuario}! ✈️")
 st.write("Usa el menú de la izquierda para cambiar de materia.")
 
 col1, col2, col3 = st.columns(3)
