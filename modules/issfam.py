@@ -43,9 +43,9 @@ def show():
 
     progreso = cargar_progreso()
 
-    st.markdown("## ISSFAM - Primera parte")
+    st.markdown("## ISSFAM")
     st.info(f"👤 Usuario: **{usuario}**")
-    st.info(f" Dificultad del tema: **{dificultad}**")
+    st.info(f" Dificultad del tema: {dificultad}")
 
     if usuario in progreso and seccion_id in progreso[usuario]:
         datos = progreso[usuario][seccion_id]
