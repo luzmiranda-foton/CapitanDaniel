@@ -5,6 +5,7 @@ from modules import disciplina
 from modules import issfam
 from modules import deberes
 from modules import ascensos
+from modules import justicia_militar
 
 st.title("Legislación")
 
@@ -26,7 +27,7 @@ elif opcion == "Ley Federal de Armas de Fuego y Explosivos":
     st.warning("⚠️ Módulo en construcción")
 
 elif opcion == "Código de Justicia Militar":
-    st.warning("⚠️ Módulo en construcción")
+    justicia_militar.show()
 
 elif opcion == "Reglamento General de Deberes Militares":
     deberes.show()    
