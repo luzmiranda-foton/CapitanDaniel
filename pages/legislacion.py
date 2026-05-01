@@ -6,6 +6,7 @@ from modules import issfam
 from modules import deberes
 from modules import ascensos
 from modules import justicia_militar
+from modules import armas
 
 st.title("Legislación")
 
