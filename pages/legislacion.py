@@ -4,6 +4,7 @@ import streamlit as st
 from modules import disciplina
 from modules import issfam
 from modules import deberes
+from modules import ascensos
 
 st.title("Legislación")
 
@@ -34,4 +35,4 @@ elif opcion == "Ley del Instituto de Seguridad Social para las Fuerzas Armadas M
    issfam.show()
 
 elif opcion == "Ley de Ascensos y Recompensas del Ejército y Fuerza Aérea Mexicanos":
-    st.warning("⚠️ Módulo en construcción")
+    ascensos.show() 
