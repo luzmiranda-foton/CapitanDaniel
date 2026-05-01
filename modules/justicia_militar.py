@@ -30,7 +30,7 @@ def obtener_color_dominio(porcentaje):
 
 
 def show():
-    st.title("⚖️ Código de Justicia Militar")
+    st.title("Código de Justicia Militar")
 
     usuario = st.session_state.get("usuario")
 
@@ -45,7 +45,7 @@ def show():
 
     st.markdown("## Primera parte")
     st.info(f"👤 Usuario: **{usuario}**")
-    st.info(f"Dificultad del tema: **{dificultad}**")
+    st.info(f"Dificultad del tema: {dificultad}")
 
     if usuario in progreso and seccion_id in progreso[usuario]:
         datos = progreso[usuario][seccion_id]
