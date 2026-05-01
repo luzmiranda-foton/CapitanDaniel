@@ -43,7 +43,7 @@ def show():
 
     progreso = cargar_progreso()
 
-    st.markdown("## Primera parte")
+    
     st.info(f"👤 Usuario: **{usuario}**")
     st.info(f"Dificultad del tema: {dificultad}")
 
