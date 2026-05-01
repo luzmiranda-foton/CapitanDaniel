@@ -40,7 +40,7 @@ def mostrar_cuestionario(preguntas, seccion_id, dificultad, titulo):
 
     st.markdown(f"## {titulo}")
     st.info(f"👤 Usuario: **{usuario}**")
-    st.info(f"🔥 Dificultad del tema: **{dificultad}**")
+    st.info(f"Dificultad del tema: {dificultad}")
 
     if usuario in progreso and seccion_id in progreso[usuario]:
         datos = progreso[usuario][seccion_id]
@@ -189,7 +189,7 @@ def mostrar_cuestionario(preguntas, seccion_id, dificultad, titulo):
 
 
 def show():
-    st.title("🔫 Ley Federal de Armas de Fuego y Explosivos")
+    st.title("Ley Federal de Armas de Fuego y Explosivos")
 
     dificultad = "🔴 Difícil"
 
