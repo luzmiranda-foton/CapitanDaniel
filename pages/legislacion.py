@@ -25,7 +25,7 @@ if opcion == "Ley de Disciplina del Ejército y Fuerza Aérea Mexicanos":
     disciplina.show()
 
 elif opcion == "Ley Federal de Armas de Fuego y Explosivos":
-    st.warning("⚠️ Módulo en construcción")
+    armas.show()
 
 elif opcion == "Código de Justicia Militar":
     justicia_militar.show()
