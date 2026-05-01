@@ -30,7 +30,7 @@ elif opcion == "Código de Justicia Militar":
     st.warning("⚠️ Módulo en construcción")
 
 elif opcion == "Reglamento General de Deberes Militares":
-    st.warning("⚠️ Módulo en construcción")
+    deberes.show()    
 
 elif opcion == "Ley del Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas":
    issfam.show()
