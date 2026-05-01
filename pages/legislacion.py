@@ -3,9 +3,7 @@ import streamlit as st
 # importar módulos (puedes crearlos poco a poco)
 from modules import disciplina
 from modules import issfam
-# from modules import armas
-# from modules import justicia
-# etc...
+from modules import deberes
 
 st.title("Legislación")
 
