@@ -57,12 +57,12 @@ def show():
     preguntas = [
         {
             "tipo": "radio",
-            "pregunta": "1. ¿Qué responsabilidad produce todo delito del orden militar? (Art. 99)",
-            "correcta": "Produce responsabilidad criminal y sujeta a una pena al que lo comete.",
+            "pregunta": "1. Lee el siguiente texto:\n\nTodo delito del orden militar produce responsabilidad criminal, esto es, sujeta a una pena al que lo comete aunque sólo haya obrado con imprudencia y no con dañada intención.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 99 del Código de Justicia Militar",
             "opciones": [
-                "Produce responsabilidad criminal y sujeta a una pena al que lo comete.",
-                "Produce únicamente una llamada de atención.",
-                "No produce responsabilidad si fue por imprudencia.",
+                "Artículo 99 del Código de Justicia Militar",
+                "Artículo 100 del Código de Justicia Militar",
+                "Artículo 105 del Código de Justicia Militar",
             ],
         },
         {
@@ -77,12 +77,12 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "3. ¿Cuándo no es punible la infracción del Art. 100?",
-            "correcta": "Cuando el delincuente esté ligado con el militar por ciertos vínculos de parentesco.",
+            "pregunta": "3. Lee el siguiente texto:\n\nLa inocencia de todo imputado se presumirá mientras no se declare su responsabilidad mediante sentencia firme, emitida por el juez de la causa y conforme a las reglas establecidas en este Código.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 102 del Código de Justicia Militar",
             "opciones": [
-                "Cuando el delincuente esté ligado con el militar por ciertos vínculos de parentesco.",
-                "Cuando el delito sea grave.",
-                "Cuando el militar esté de descanso.",
+                "Artículo 101 del Código de Justicia Militar",
+                "Artículo 102 del Código de Justicia Militar",
+                "Artículo 107 del Código de Justicia Militar",
             ],
         },
         {
@@ -101,12 +101,12 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "5. ¿Cómo se presume la inocencia de todo imputado? (Art. 102)",
-            "correcta": "Mientras no se declare su responsabilidad mediante sentencia firme.",
+            "pregunta": "5. Lee el siguiente texto:\n\nLos delitos serán punibles en todos sus grados de ejecución. Estos son conato, delito frustrado y delito consumado.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 105 del Código de Justicia Militar",
             "opciones": [
-                "Mientras no se declare su responsabilidad mediante sentencia firme.",
-                "Solo hasta que sea detenido.",
-                "Solo durante las primeras 24 horas.",
+                "Artículo 103 del Código de Justicia Militar",
+                "Artículo 105 del Código de Justicia Militar",
+                "Artículo 108 del Código de Justicia Militar",
             ],
         },
         {
@@ -121,12 +121,12 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "7. ¿Cómo se castigan las infracciones que solamente constituyen faltas? (Art. 104)",
-            "correcta": "De acuerdo con lo que prevenga la Ordenanza o leyes que la substituyan.",
+            "pregunta": "7. Lee el siguiente texto:\n\nHay reincidencia siempre que el condenado por sentencia ejecutoria cometa un nuevo delito, si no ha transcurrido, desde el cumplimiento de la condena, desde que la quebrantare o desde su indulto, por gracia, un término igual al de la prescripción de la pena.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 107 del Código de Justicia Militar",
             "opciones": [
-                "De acuerdo con lo que prevenga la Ordenanza o leyes que la substituyan.",
-                "Con pena de treinta a sesenta años.",
-                "Con destitución automática.",
+                "Artículo 107 del Código de Justicia Militar",
+                "Artículo 108 del Código de Justicia Militar",
+                "Artículo 111 del Código de Justicia Militar",
             ],
         },
         {
@@ -157,27 +157,17 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "10. ¿Cuándo hay reincidencia? (Art. 107)",
-            "correcta": "Cuando el condenado por sentencia ejecutoria comete un nuevo delito dentro del término correspondiente.",
+            "pregunta": "10. Lee el siguiente texto:\n\nHay acumulación, siempre que alguno es juzgado a la vez por varios delitos ejecutados en actos distintos, y aunque sean conexos entre sí, cuando no se ha pronunciado antes sentencia irrevocable y la acción para perseguirlos no está prescrita.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 108 del Código de Justicia Militar",
             "opciones": [
-                "Cuando el condenado por sentencia ejecutoria comete un nuevo delito dentro del término correspondiente.",
-                "Cuando alguien comete una falta por primera vez.",
-                "Cuando se dicta absolución.",
-            ],
-        },
-        {
-            "tipo": "radio",
-            "pregunta": "11. ¿Cuándo hay acumulación? (Art. 108)",
-            "correcta": "Cuando alguien es juzgado a la vez por varios delitos ejecutados en actos distintos.",
-            "opciones": [
-                "Cuando alguien es juzgado a la vez por varios delitos ejecutados en actos distintos.",
-                "Cuando solo existe un delito.",
-                "Cuando ya existe sentencia irrevocable previa.",
+                "Artículo 100 del Código de Justicia Militar",
+                "Artículo 108 del Código de Justicia Militar",
+                "Artículo 116 del Código de Justicia Militar",
             ],
         },
         {
             "tipo": "multiple",
-            "pregunta": "12. Selecciona quiénes pueden ser autores de un delito. (Art. 109)",
+            "pregunta": "11. Selecciona quiénes pueden ser autores de un delito. (Art. 109)",
             "correctas": [
                 "Los que conciben, resuelven cometer, preparan y ejecutan el delito",
                 "Los que son la causa determinante del delito",
@@ -195,7 +185,7 @@ def show():
         },
         {
             "tipo": "multiple",
-            "pregunta": "13. Selecciona quiénes son cómplices. (Art. 111)",
+            "pregunta": "12. Selecciona quiénes son cómplices. (Art. 111)",
             "correctas": [
                 "Los que ayudan a los autores en los preparativos del delito",
                 "Los que proporcionan instrumentos, armas u otros medios adecuados",
@@ -214,26 +204,18 @@ def show():
             ],
         },
         {
-            "tipo": "multiple",
-            "pregunta": "14. Selecciona formas de encubrimiento de primera clase. (Art. 116)",
-            "correctas": [
-                "Auxiliar a los delincuentes para que se aprovechen de los instrumentos o cosas del delito",
-                "Impedir que se averigüe el delito",
-                "Impedir que se descubra a los responsables",
-                "Ocultar a los responsables si tienen costumbre de hacerlo u obran por retribución",
-            ],
+            "tipo": "radio",
+            "pregunta": "13. Lee el siguiente texto:\n\nSon encubridores de primera clase, los que sin previo concierto con los delincuentes, los favorecen auxiliándolos, impidiendo que se averigüe el delito o que se descubra a los responsables, u ocultando a éstos en ciertos casos.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 116 del Código de Justicia Militar",
             "opciones": [
-                "Auxiliar a los delincuentes para que se aprovechen de los instrumentos o cosas del delito",
-                "Impedir que se averigüe el delito",
-                "Impedir que se descubra a los responsables",
-                "Ocultar a los responsables si tienen costumbre de hacerlo u obran por retribución",
-                "Poner el delito en conocimiento del Ministerio Público",
-                "Cumplir una sentencia firme",
+                "Artículo 111 del Código de Justicia Militar",
+                "Artículo 116 del Código de Justicia Militar",
+                "Artículo 122 del Código de Justicia Militar",
             ],
         },
         {
             "tipo": "multiple",
-            "pregunta": "15. Selecciona las penas establecidas en el Código de Justicia Militar. (Art. 122)",
+            "pregunta": "14. Selecciona las penas establecidas en el Código de Justicia Militar. (Art. 122)",
             "correctas": [
                 "Prisión",
                 "Suspensión de empleo o comisión militar",
@@ -249,7 +231,7 @@ def show():
         },
         {
             "tipo": "multiple",
-            "pregunta": "16. Selecciona bases del Sistema Penitenciario Militar. (Art. 122 Bis)",
+            "pregunta": "15. Selecciona bases del Sistema Penitenciario Militar. (Art. 122 Bis)",
             "correctas": [
                 "Trabajo",
                 "Capacitación para el trabajo",
@@ -274,24 +256,18 @@ def show():
             ],
         },
         {
-            "tipo": "multiple",
-            "pregunta": "17. ¿Cuáles son los tres términos de toda pena temporal? (Art. 123)",
-            "correctas": [
-                "Mínimo",
-                "Medio",
-                "Máximo",
-            ],
+            "tipo": "radio",
+            "pregunta": "16. Lee el siguiente texto:\n\nToda pena temporal tiene tres términos: mínimo, medio y máximo.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 123 del Código de Justicia Militar",
             "opciones": [
-                "Mínimo",
-                "Medio",
-                "Máximo",
-                "Inicial",
-                "Final",
+                "Artículo 122 del Código de Justicia Militar",
+                "Artículo 123 del Código de Justicia Militar",
+                "Artículo 128 del Código de Justicia Militar",
             ],
         },
         {
             "tipo": "radio",
-            "pregunta": "18. ¿Desde cuándo se cuentan las penas de prisión? (Art. 126)",
+            "pregunta": "17. ¿Desde cuándo se cuentan las penas de prisión? (Art. 126)",
             "correcta": "Desde la fecha en que se hubiese restringido la libertad del inculpado.",
             "opciones": [
                 "Desde la fecha en que se hubiese restringido la libertad del inculpado.",
@@ -301,17 +277,17 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "19. ¿En qué consiste la pena de prisión militar? (Art. 128)",
-            "correcta": "En la privación de la libertad desde dieciséis días a sesenta años.",
+            "pregunta": "18. Lee el siguiente texto:\n\nLa pena de prisión consiste en la privación de la libertad desde dieciséis días a sesenta años, sin que este segundo término pueda ser aumentado ni aún por causa de acumulación o reincidencia.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 128 del Código de Justicia Militar",
             "opciones": [
-                "En la privación de la libertad desde dieciséis días a sesenta años.",
-                "En una multa económica únicamente.",
-                "En suspensión de clases militares.",
+                "Artículo 125 del Código de Justicia Militar",
+                "Artículo 128 del Código de Justicia Militar",
+                "Artículo 131 del Código de Justicia Militar",
             ],
         },
         {
             "tipo": "radio",
-            "pregunta": "20. ¿En qué consiste la pena de suspensión de empleo? (Art. 131)",
+            "pregunta": "19. ¿En qué consiste la pena de suspensión de empleo? (Art. 131)",
             "correcta": "En la privación temporal del empleo, remuneración, honores, consideraciones e insignias correspondientes.",
             "opciones": [
                 "En la privación temporal del empleo, remuneración, honores, consideraciones e insignias correspondientes.",
@@ -321,17 +297,17 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "21. ¿En qué consiste la destitución de empleo? (Art. 136)",
-            "correcta": "En la privación absoluta del empleo militar que estuviere desempeñando el inculpado.",
+            "pregunta": "20. Lee el siguiente texto:\n\nLa destitución de empleo consiste en la privación absoluta del empleo militar que estuviere desempeñando el inculpado.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 136 del Código de Justicia Militar",
             "opciones": [
-                "En la privación absoluta del empleo militar que estuviere desempeñando el inculpado.",
-                "En una suspensión de tres días.",
-                "En una recompensa por servicios.",
+                "Artículo 128 del Código de Justicia Militar",
+                "Artículo 131 del Código de Justicia Militar",
+                "Artículo 136 del Código de Justicia Militar",
             ],
         },
         {
             "tipo": "radio",
-            "pregunta": "22. ¿Cuál es la pena para traición a la patria? (Art. 203)",
+            "pregunta": "21. ¿Cuál es la pena para traición a la patria? (Art. 203)",
             "correcta": "De treinta a sesenta años de prisión.",
             "opciones": [
                 "De treinta a sesenta años de prisión.",
@@ -341,7 +317,7 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "23. ¿Cuál es la pena para espionaje militar? (Art. 206)",
+            "pregunta": "22. ¿Cuál es la pena para espionaje militar? (Art. 206)",
             "correcta": "De treinta a sesenta años de prisión.",
             "opciones": [
                 "De treinta a sesenta años de prisión.",
@@ -351,7 +327,7 @@ def show():
         },
         {
             "tipo": "multiple",
-            "pregunta": "24. Selecciona fines del delito de rebelión militar. (Art. 218)",
+            "pregunta": "23. Selecciona fines del delito de rebelión militar. (Art. 218)",
             "correctas": [
                 "Abolir o reformar la Constitución Federal",
                 "Impedir la elección de los Supremos Poderes de la Federación",
@@ -371,17 +347,17 @@ def show():
         },
         {
             "tipo": "radio",
-            "pregunta": "25. ¿Cuál es la pena para quien promueva o dirija una rebelión militar? (Art. 219)",
-            "correcta": "De treinta a sesenta años de prisión.",
+            "pregunta": "24. Lee el siguiente texto:\n\nSe impondrá pena de treinta a sesenta años de prisión al que promueva o dirija una rebelión, a quien ejerza mando en una región o plaza que se adhiera a la rebelión, y otros supuestos señalados por la ley.\n\n¿A qué artículo pertenece?",
+            "correcta": "Artículo 219 del Código de Justicia Militar",
             "opciones": [
-                "De treinta a sesenta años de prisión.",
-                "De dos a cinco días de arresto.",
-                "Solo una amonestación.",
+                "Artículo 203 del Código de Justicia Militar",
+                "Artículo 219 del Código de Justicia Militar",
+                "Artículo 224 del Código de Justicia Militar",
             ],
         },
         {
             "tipo": "radio",
-            "pregunta": "26. ¿Cuántas personas deben reunirse tumultuariamente para que exista sedición militar? (Art. 224)",
+            "pregunta": "25. ¿Cuántas personas deben reunirse tumultuariamente para que exista sedición militar? (Art. 224)",
             "correcta": "Diez o más.",
             "opciones": [
                 "Diez o más.",
@@ -391,7 +367,7 @@ def show():
         },
         {
             "tipo": "multiple",
-            "pregunta": "27. Selecciona objetos de la sedición militar. (Art. 224)",
+            "pregunta": "26. Selecciona objetos de la sedición militar. (Art. 224)",
             "correctas": [
                 "Impedir la promulgación de una ley",
                 "Impedir la ejecución de una ley",
